@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/coracao.png') }}" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:400,500,600%7CTeko:300,400,500%7CMaven+Pro:500">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+  <body>
+    
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container"><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div id="home">
+        <!-- Page Header-->
+        <header class="section page-header container-fluid" style="border-bottom: 1px solid  #ebebeb;">
+          <!-- RD Navbar-->
+          <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+              <div class="rd-navbar-main-outer">
+                <div class="rd-navbar-main">
+                  <!-- RD Navbar Panel-->
+                  <div class="rd-navbar-panel">
+                    <!-- RD Navbar Toggle-->
+                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                    <!-- RD Navbar Brand-->
+                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ url_for('static', filename='images/coracao.png') }}" alt="" width="223" height="50"/></a></div>
+                  </div>
+                  <div class="rd-navbar-main-element">
+                    <div class="rd-navbar-nav-wrap">
+                      <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('index') }}">Home</a></li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('index') }}#ia">About Our AI</a></li>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Take the Assessment</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+      <section class="section section-sm section-last bg-default text-left" id="contacts">
+        <div class="container">
+          <article class="title-classic">
+            <div class="title-classic-title">
+              <h3>Discover Your Heart Attack Risk Now</h3>
+              <p>Answer a few quick questions and our Artificial Intelligence will analyze your data to provide a personalized assessment.</p>
+            </div>
+          </article>
+
+     <form class="rd-form rd-form-variant-2 rd-mailform" id="healthForm">
+      <div class="row row-14 gutters-14">
+        <!-- Age -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="age" type="number" name="age" data-constraints="@Required">
+            <label class="form-label" for="age">Age*</label>
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <select class="form-input" id="sex" name="sex" data-constraints="@Required">
+              <option value="" disabled selected>Gender*</option>
+              <option value="0">Female</option>
+              <option value="1">Male</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Chest pain type -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <select class="form-input" id="cp" name="cp" data-constraints="@Required">
+              <option value="" disabled selected>Chest pain type*</option>
+              <option value="0">Typical chest discomfort (like tightness)</option>
+              <option value="1">Atypical discomfort (different sensation)</option>
+              <option value="2">Non-heart related pain</option>
+              <option value="3">No chest pain</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Cholesterol -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="chol" type="number" name="chol" data-constraints="@Required">
+            <label class="form-label" for="chol">Total cholesterol (mg/dL)*</label>
+          </div>
+        </div>
+
+        <!-- Blood pressure -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="trtbps" type="number" name="trtbps" data-constraints="@Required">
+            <label class="form-label" for="trtbps">Blood pressure (mmHg)*</label>
+            <small class="text-muted">Example: 130</small>
+          </div>
+        </div>
+
+        <!-- Heart rate -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <input class="form-input" id="thalachh" type="number" name="thalachh" data-constraints="@Required">
+            <label class="form-label" for="thalachh">Maximum heart rate*</label>
+            <small class="text-muted">Ex: 160 beats per minute during exertion.</small>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <button class="button button-primary button-pipaluk" type="button" id="analyzeBtn">
+              <div class="fa fa-heartbeat"></div> Analyze Risk
+            </button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="col-12 mt-4">
+          <div class="form-wrap">
+            <div id="predictionResult" style="padding: 30px; height: 140px; border-radius: 20px; background: #f8f9fa; border: 1px solid #ddd;">
+              <!-- Result will appear here -->
+            </div>
+            <div class="footer-metrics" style="margin-top: 10px; margin-left:15px; font-size: 12px; color:cadetblue;"></div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+        </div>
+      </section>
+
+      <!-- Page Footer-->
+      <footer class="section section-fluid footer-minimal context-dark">
+        <div class="bg-gray-15">
+          <div class="container-fluid">
+            <div class="footer-minimal-bottom-panel text-sm-left">
+              <div class="row row-10 align-items-md-center">
+                <div class="col-sm-6 col-md-4 order-sm-first">
+                  <!-- Rights-->
+                  <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('analyzeBtn').addEventListener('click', async () => {
+        const formData = {
+          age: document.getElementById('age').value,
+          sex: document.getElementById('sex').value,
+          cp: document.getElementById('cp').value,
+          chol: document.getElementById('chol').value,
+          trtbps: document.getElementById('trtbps').value,
+          thalachh: document.getElementById('thalachh').value
+        };
+
+        try {
+          // Send data for prediction
+          const response = await fetch('http://localhost:5000/predict', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          const data = await response.json();
+
+          // Now fetch metrics
+          const metricsResponse = await fetch('/metrics');
+          const metricsData = await metricsResponse.json();
+
+          // Display result based on predicted class
+          let resultText = '';
+         if (data.result === 1) {
+            resultText = `
+              ⚠️ <strong>High risk of heart attack!</strong><br>
+              According to tests, this prediction has a <strong>${(metricsData.sensitivity * 100).toFixed(0)}%</strong> chance of being correct.<br>
+              👉 It's very important to see a doctor and maintain healthy habits.
+            `;
+          } else {
+            resultText = `
+              ✅ <strong>Low risk!</strong><br>
+              According to tests, this prediction has a <strong>${(metricsData.specificity * 100).toFixed(0)}%</strong> chance of being correct.<br>
+              👍 Keep taking care of yourself and get regular check-ups.
+            `;
+          }
+
+
+          document.getElementById('predictionResult').innerHTML = resultText;
+
+          document.querySelector('.footer-metrics').innerHTML = `
+            <p>Model overall accuracy: ${metricsData.accuracy}</p>
+          `;
+
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById('predictionResult').innerHTML = "Error in analysis. Please try again.";
+        }
+      });
+    </script>
+
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- coded by Himic-->
+  </body>
+</html>
